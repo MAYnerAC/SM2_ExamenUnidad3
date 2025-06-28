@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../services/AuthService.dart';
+import '../services/auth_service.dart';
 
 class RecoverPasswordScreen extends StatefulWidget {
   const RecoverPasswordScreen({super.key});

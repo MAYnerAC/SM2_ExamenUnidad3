@@ -1,6 +1,8 @@
-// services/PreferenceService.dart
+// services/preference_service_a.dart
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:proyecto_moviles_2/services/AuthService.dart'; // Asegúrate que esta ruta sea correcta
+import 'package:proyecto_moviles_2/services/auth_service.dart'; // Asegúrate que esta ruta sea correcta
+//
+import 'package:flutter/foundation.dart';
 
 class PreferenceService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -37,9 +39,9 @@ class PreferenceService {
       await userDocRef.set({
         'preferencias': newPreferences,
       }, SetOptions(merge: true));
-      print('Preferencias actualizadas con éxito.');
+      debugPrint('Preferencias actualizadas con éxito.');
     } else {
-      print('Error: Usuario no logueado para actualizar preferencias.');
+      debugPrint('Error: Usuario no logueado para actualizar preferencias.');
     }
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_moviles_2/services/AuthService.dart';
-import 'package:proyecto_moviles_2/screens/productlistscreen.dart';
+import 'package:proyecto_moviles_2/services/auth_service.dart';
+import 'package:proyecto_moviles_2/screens/product_list_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AdminDashboardScreen extends StatelessWidget {

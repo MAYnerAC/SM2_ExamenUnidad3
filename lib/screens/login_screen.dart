@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:proyecto_moviles_2/screens/AdminDashboardScreen.dart';
-import 'package:proyecto_moviles_2/screens/RecoverPasswordScreen.dart';
-import 'package:proyecto_moviles_2/screens/RegisterScreen.dart';
-import '../services/AuthService.dart';
+import 'package:proyecto_moviles_2/screens/admin_dashboard_screen.dart';
+import 'package:proyecto_moviles_2/screens/recover_password_screen.dart';
+import 'package:proyecto_moviles_2/screens/register_screen.dart';
+import '../services/auth_service.dart';
 import 'main_screen.dart';
-import 'package:proyecto_moviles_2/screens/AdminHomePage.dart';
+import 'package:proyecto_moviles_2/screens/admin_home_page.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -29,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
       final doc = await FirebaseFirestore.instance.collection('usuario').doc(uid).get();
       return doc.data()?['rol'];
     } catch (e) {
-      print('❌ Error al obtener rol: $e');
+      debugPrint('❌ Error al obtener rol: $e');
       return null;
     }
   }

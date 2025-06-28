@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:http/http.dart' as http;
 import 'package:proyecto_moviles_2/screens/mercado_pago_webview.dart';
-import 'package:proyecto_moviles_2/services/AuthService.dart';
+import 'package:proyecto_moviles_2/services/auth_service.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CartScreen extends StatelessWidget {
@@ -191,7 +191,7 @@ class CartScreen extends StatelessWidget {
                           final data = jsonDecode(response.body);
                           final initPoint = data['init_point'];
 
-                          print('✅ init_point recibido: $initPoint');
+                          debugPrint('✅ init_point recibido: $initPoint');
 
                           if (initPoint == null) {
                             ScaffoldMessenger.of(context).showSnackBar(
@@ -212,7 +212,7 @@ class CartScreen extends StatelessWidget {
                             ),
                           );
                         } else {
-                          print('❌ Error del servidor: ${response.body}');
+                          debugPrint('❌ Error del servidor: ${response.body}');
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                               content: Text('Error al crear preferencia'),
@@ -220,7 +220,7 @@ class CartScreen extends StatelessWidget {
                           );
                         }
                       } catch (e) {
-                        print('❌ Error: $e');
+                        debugPrint('❌ Error: $e');
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Text('Error de conexión al servidor'),

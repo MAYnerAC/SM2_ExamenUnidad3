@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'productlistscreen.dart';
-import 'UserListScreen.dart';
-import '../services/auth_service.dart';
+import 'product_list_screen.dart';
+import 'user_list_screen.dart';
+import '../services/auth_service_a.dart';
 
 class AdminHomePage extends StatelessWidget {
   const AdminHomePage({super.key});

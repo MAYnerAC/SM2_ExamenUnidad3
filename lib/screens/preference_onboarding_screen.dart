@@ -1,7 +1,7 @@
 // screens/preference_onboarding_screen.dart
 import 'package:flutter/material.dart';
 import 'package:proyecto_moviles_2/models/preference_questions.dart';
-import 'package:proyecto_moviles_2/screens/PreferenceService.dart';
+import 'package:proyecto_moviles_2/screens/preference_service.dart';
 import 'package:proyecto_moviles_2/screens/main_screen.dart'; // <<<--- ASEGÚRATE DE ESTA IMPORTACIÓN
 
 class PreferenceOnboardingScreen extends StatefulWidget {

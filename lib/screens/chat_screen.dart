@@ -61,7 +61,7 @@ class _ChatScreenState extends State<ChatScreen> {
         return "❌ No se pudo obtener respuesta.";
       }
     } else {
-      print("Error Gemini: ${response.statusCode} → ${response.body}");
+      debugPrint("Error Gemini: ${response.statusCode} → ${response.body}");
       return "❌ Error al contactar a Gemini.";
     }
   }

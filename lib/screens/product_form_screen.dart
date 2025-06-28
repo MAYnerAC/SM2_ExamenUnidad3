@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:io';
 import '../models/product.dart';
-import '../services/AuthService.dart'; // <-- IMPORTA TU AUTHSERVICE
+import '../services/auth_service.dart'; // <-- IMPORTA TU AUTHSERVICE
 
 class ProductFormScreen extends StatefulWidget {
   final Product? productoExistente;
@@ -232,8 +232,8 @@ class _ProductFormScreenState extends State<ProductFormScreen> {
       final data = json.decode(resStr);
       return data['secure_url'];
     } else {
-      print('Error al subir: ${response.statusCode}');
-      print('Error al subir la imagen');
+      debugPrint('Error al subir: ${response.statusCode}');
+      debugPrint('Error al subir la imagen');
       return null;
     }
   }

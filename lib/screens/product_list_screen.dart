@@ -1,16 +1,15 @@
-// product_list_screen.dart - Diseño mejorado
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/product.dart';
-import 'ProductFormScreen.dart';
-import 'package:proyecto_moviles_2/services/AuthService.dart';
+import 'product_form_screen.dart';
+import 'package:proyecto_moviles_2/services/auth_service.dart';
 
 class ProductListScreen extends StatefulWidget {
   const ProductListScreen({super.key});
 
   @override
   State<ProductListScreen> createState() => _ProductListScreenState();
-}
+} 
 
 class _ProductListScreenState extends State<ProductListScreen> {
   List<Product> productos = [];
@@ -28,7 +27,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
     setState(() => _isLoading = true);
     _currentUserId = AuthService.currentUser?.uid;
     if (_currentUserId == null) {
-      print('Advertencia: No hay usuario logueado en ProductListScreen.');
+      debugPrint('Advertencia: No hay usuario logueado en ProductListScreen.');
       setState(() {
         productos = [];
         _isLoading = false;
@@ -40,7 +39,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
 
   Future<void> _cargarProductos() async {
     if (_currentUserId == null) {
-      print('Error: No se puede cargar productos sin un ID de vendedor.');
+      debugPrint('Error: No se puede cargar productos sin un ID de vendedor.');
       setState(() => _isLoading = false);
       return;
     }

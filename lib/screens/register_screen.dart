@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_moviles_2/screens/AdminDashboardScreen.dart';
+import 'package:proyecto_moviles_2/screens/admin_dashboard_screen.dart';
 import 'package:proyecto_moviles_2/screens/preference_onboarding_screen.dart';
-import 'package:proyecto_moviles_2/services/AuthService.dart';
+import 'package:proyecto_moviles_2/services/auth_service.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
