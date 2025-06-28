@@ -4,6 +4,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
+//
+import 'package:flutter/foundation.dart';
 
 class AuthService {
   static final FirebaseAuth _auth =
@@ -18,7 +20,7 @@ class AuthService {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
       return true;
     } on FirebaseAuthException catch (e) {
-      print("❌ Error de login: ${e.code} - ${e.message}");
+      debugPrint("❌ Error de login: ${e.code} - ${e.message}");
       return false;
     }
   }
@@ -51,7 +53,7 @@ class AuthService {
 
       return true;
     } catch (e) {
-      print('❌ Error al registrar: $e');
+      debugPrint('❌ Error al registrar: $e');
       return false;
     }
   }
@@ -62,7 +64,7 @@ class AuthService {
       await _auth.sendPasswordResetEmail(email: email);
       return true;
     } catch (e) {
-      print('❌ Error enviando correo de recuperación: $e');
+      debugPrint('❌ Error enviando correo de recuperación: $e');
       return false;
     }
   }
@@ -123,7 +125,7 @@ class AuthService {
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
       final initPoint = data['init_point'];
-      print('🔗 init_point: $initPoint');
+      debugPrint('🔗 init_point: $initPoint');
 
       if (await canLaunchUrl(Uri.parse(initPoint))) {
         await launchUrl(
@@ -134,7 +136,7 @@ class AuthService {
         throw 'No se pudo abrir Mercado Pago';
       }
     } else {
-      print("❌ Error del servidor: ${response.body}");
+      debugPrint("❌ Error del servidor: ${response.body}");
     }
   }
 

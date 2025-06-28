@@ -5,7 +5,7 @@ import '../models/product.dart';
 import 'product_detail_screen.dart';
 import 'chat_screen.dart';
 import 'favorites_screen.dart';
-import '../services/FavoriteService.dart';
+import '../services/favorite_service.dart';
 
 class CatalogScreen extends StatefulWidget {
   final String? categoriaPreseleccionada;

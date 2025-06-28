@@ -1,7 +1,7 @@
 // screens/favorites_screen.dart
 import 'package:flutter/material.dart';
 import 'package:proyecto_moviles_2/services/AuthService.dart';
-import 'package:proyecto_moviles_2/services/FavoriteService.dart';
+import 'package:proyecto_moviles_2/services/favorite_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:proyecto_moviles_2/models/product.dart';
 import 'package:proyecto_moviles_2/screens/product_detail_screen.dart';

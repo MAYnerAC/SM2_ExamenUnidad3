@@ -1,6 +1,8 @@
-// services/FavoriteService.dart
+// services/favorite_service.dart
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:proyecto_moviles_2/services/AuthService.dart'; // Asegúrate que esta ruta sea correcta
+//
+import 'package:flutter/foundation.dart';
 
 class FavoriteService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -26,9 +28,9 @@ class FavoriteService {
       await favoritesCollection.doc(productId).set({
         'added_at': FieldValue.serverTimestamp(),
       });
-      print('Producto $productId agregado a favoritos.');
+      debugPrint('Producto $productId agregado a favoritos.');
     } else {
-      print('Error: Usuario no logueado para añadir favorito.');
+      debugPrint('Error: Usuario no logueado para añadir favorito.');
     }
   }
 
@@ -37,9 +39,9 @@ class FavoriteService {
     final favoritesCollection = _getFavoritesCollection();
     if (favoritesCollection != null) {
       await favoritesCollection.doc(productId).delete();
-      print('Producto $productId removido de favoritos.');
+      debugPrint('Producto $productId removido de favoritos.');
     } else {
-      print('Error: Usuario no logueado para remover favorito.');
+      debugPrint('Error: Usuario no logueado para remover favorito.');
     }
   }
 

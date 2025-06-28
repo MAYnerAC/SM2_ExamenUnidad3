@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:proyecto_moviles_2/models/product.dart';
 import 'package:proyecto_moviles_2/services/AuthService.dart';
-import 'package:proyecto_moviles_2/services/FavoriteService.dart';
+import 'package:proyecto_moviles_2/services/favorite_service.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   final Product product;
