@@ -53,3 +53,51 @@ Al inicio se encontraron los siguientes:
 - `lib/services/favorites_service.dart`
 
 
+
+## Cambios Realizados
+
+### 1. Eliminación de Imports No Usados
+- Archivos con imports eliminados:
+  - `main.dart`
+  - `admin_home_page.dart`
+  - `cart_screen.dart`
+  - `chat_screen.dart`
+
+### 2. Correcciones de Lint (estilo y buenas prácticas)
+
+- **Evitar uso de `BuildContext` tras `await`**
+  - Se reorganizó el flujo en múltiples pantallas (`login_screen`, `register_screen`, `product_form_screen`, etc.)
+  - Uso seguro del contexto tras operaciones asíncronas para evitar errores en la navegación.
+
+- **Eliminación de `print()` en producción**
+  - Sustituido por comentarios o removido directamente en:
+    - `chat_screen.dart`
+    - `preference_service.dart`
+    - `product_form_screen.dart`
+    - `cart_screen.dart`
+
+- **Variables sin usar eliminadas**
+  - Ejemplo: `final url = Uri.parse(initPoint);` → Eliminada por ser innecesaria.
+
+- **Eliminación de métodos no utilizados**
+  - Funciones declaradas pero nunca invocadas (`_obtenerRecomendacion`) fueron eliminadas.
+
+- **Cast innecesarios eliminados**
+  - Se corrigieron conversiones redundantes como `(value as SomeType)`.
+
+- **Parámetros con nombres conflictivos renombrados**
+  - Evitado uso de nombres de parámetros que coinciden con tipos (`sum`, `String`).
+
+---
+
+## Advertencias Pendientes (opcional)
+Estas no afectan el funcionamiento, pero se recomienda corregir a futuro:
+- Uso de `withOpacity` (reemplazar por `.withAlpha()` o `.withValues()`).
+- Renombrar archivos a `lower_case_with_underscores.dart`.
+- Revisar que todos los métodos estén siendo usados.
+
+---
+
+## Conclusión
+
+> El proyecto se limpio y mejoro en su mayoria, todo en base a las reglas del analizador estático de Dart/Flutter. El código es ahora más legible, pero aun se esperan completar las correcciones faltantes del analizador.

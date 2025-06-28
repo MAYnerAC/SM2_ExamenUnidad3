@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'product_list_screen.dart';
 import 'user_list_screen.dart';
 import '../services/auth_service_a.dart';
 
@@ -104,7 +103,7 @@ class AdminHomePage extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: color.withOpacity(0.15),
+                color: color.withAlpha(0.15 as int),
                 shape: BoxShape.circle,
               ),
               padding: const EdgeInsets.all(16),

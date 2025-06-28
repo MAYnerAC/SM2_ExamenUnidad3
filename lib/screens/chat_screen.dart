@@ -4,7 +4,6 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/product.dart'; // Asegúrate que esté bien referenciado
-import 'package:proyecto_moviles_2/screens/product_detail_screen.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
@@ -66,21 +65,7 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
-  Future<String> _obtenerRecomendacion(String userPrompt) async {
-    final productos = await _obtenerProductos();
-    final resumen = _generarResumenProductos(productos);
 
-    final mensajeCompleto = """
-    Usuario: $userPrompt
-
-    Aquí tienes los productos disponibles:
-    $resumen
-
-    Con base en estos productos, ¿cuál recomendarías?
-    """;
-
-    return await _getGeminiResponse(mensajeCompleto);
-  }
 
   void _sendMessage(String text) async {
     if (text.trim().isEmpty) return;
