@@ -11,8 +11,11 @@ class FavoritesService {
   /// Alterna el estado de favorito para [id].
   static void toggleFavorite(String id) {
     final current = Set<String>.from(favorites.value);
-    if (current.contains(id)) current.remove(id);
-    else current.add(id);
+    if (current.contains(id)) {
+      current.remove(id);
+    } else {
+      current.add(id);
+    }
     favorites.value = current;
   }
 }

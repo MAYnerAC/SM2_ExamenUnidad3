@@ -1,4 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+//
+import 'package:flutter/foundation.dart';
 
 class AuthService {
   static String? _userId; // Guardamos el ID
@@ -19,7 +21,7 @@ class AuthService {
       }
       return false;
     } catch (e) {
-      print('Error al autenticar: $e');
+      debugPrint('Error al autenticar: $e');
       return false;
     }
   }
